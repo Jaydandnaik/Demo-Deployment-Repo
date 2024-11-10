@@ -1,3 +1,18 @@
+function checkDevice() {
+  const deviceMessage = document.getElementById("device-message");
+  const mainContent = document.querySelector(".main");
+
+  if (window.innerWidth < 1024) {
+    deviceMessage.style.display = "flex";
+    mainContent.classList.add("hide-content");
+  } else {
+    deviceMessage.style.display = "none";
+    mainContent.classList.remove("hide-content");
+  }
+}
+window.onload = checkDevice;
+window.onresize = checkDevice;
+
 function smoothScroll() {
   const lenis = new Lenis({
     duration: 1.9,
